@@ -16,7 +16,7 @@ public class Ort extends MObject {
 	}
 
 	/**
-	 * 
+	 * erzeugt eine Straße von diesem zu einem anderen Ort.
 	 * @param other
 	 * @param kosten
 	 */

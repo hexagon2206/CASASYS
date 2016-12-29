@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LocalService extends MObject {
+public abstract class LocalService extends MObject {
 
 	protected Collection<Ort> availableAt;
 

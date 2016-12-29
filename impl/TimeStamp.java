@@ -11,7 +11,7 @@ public class TimeStamp {
 		
 	}
 
-	public static void stepp() {
+	public static void step() {
 		now ++;
 		throw new UnsupportedOperationException();
 	}

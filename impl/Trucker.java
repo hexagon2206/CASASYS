@@ -20,6 +20,14 @@ public class Trucker extends MObject {
 	}
 
 	/**
+	 * fills this trucker with specified amount of gasoline
+	 * @param units : amount of gasoline to fill in
+	 */
+	public void fillUp(int units) {
+		this.tankfuellung+=units;
+	}
+
+	/**
 	 * 
 	 * @param uID
 	 * @param kapazizaet
@@ -36,7 +44,6 @@ public class Trucker extends MObject {
 		this.ladung = new ArrayList<>();
 		this.registerd = new ArrayList<>();
 		this.besitzt = new ArrayList<>();
-		
 	}
 
 	/**

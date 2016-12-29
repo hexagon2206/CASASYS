@@ -7,7 +7,7 @@ public class Auftrag extends MObject {
 	protected Auftrag vater;
 	private int gewinn;
 	private Trucker owner;
-	private boolean done ;
+	private boolean done;
 
 	/**
 	 * 
@@ -27,9 +27,11 @@ public class Auftrag extends MObject {
 	}
 
 	/**
-	 * 
+	 * erzeugt eine Liste von Subaufträgen aus diesem Auftrag. sind die Listen ladungen und values nicht gleich lang
+	 * wird null zurückgegeben.
 	 * @param ladungen
 	 * @param values
+	 * @return List<Auftrag> mit allen Subaufträgen
 	 */
 	public Collection<Auftrag> split(Collection<Collection<Ladung>> ladungen, Collection<Integer> values) {
 		if(!(ladungen.size() == values.size())) return null;
@@ -38,7 +40,7 @@ public class Auftrag extends MObject {
 		for(Collection<Ladung> l : ladungen) {
 			int ts = tmp.size();
 			tmp.removeAll(l);
-			if(tmp.size() != ts-l.size() ) return null;			
+			if(tmp.size() != ts-l.size()) return null;			
 		}
 		Collection<Auftrag> toret = new ArrayList<>();
 		Iterator<Collection<Ladung>> ladungIt = ladungen.iterator();
@@ -55,6 +57,10 @@ public class Auftrag extends MObject {
 	}
 
 
+	/**
+	 * prueft, ob alle Bedingungen für den Abschluss eines Auftrags erfüllt sind. 
+	 * Falls ja, wird der Besitzer ausgezahlt und der Vaterauftrag ebenfalls überprüft. 
+	 */
 	public boolean finalise() {
 		if(this.isDone()) return false;
 		if(this.owner.isAt.done != 1) return false;
@@ -79,5 +85,4 @@ public class Auftrag extends MObject {
 		vater.finalise();
 		return true;
 	}
-
 }

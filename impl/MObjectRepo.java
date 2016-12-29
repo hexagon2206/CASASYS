@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MObjectRepo {
 
-	Map<String,MObject> objekts;
+	Map<String,MObject> objects;
 
 	private static MObjectRepo r;
 	
@@ -15,7 +15,7 @@ public class MObjectRepo {
 	 * @param name the uID of the MObject to Retrieve
 	 */
 	public static MObject getMObject(String name) {
-		return r.objekts.get(name);
+		return r.objects.get(name);
 	}
 
 	/**
@@ -23,7 +23,7 @@ public class MObjectRepo {
 	 * @param o
 	 */
 	public static boolean register(MObject o) {
-		return null==r.objekts.put(o.getUID(), o);
+		return null==r.objects.put(o.getUID(), o);
 	}
 
 	public static String getNewUID() {
@@ -31,7 +31,7 @@ public class MObjectRepo {
 	}
 
 	private MObjectRepo() {
-		objekts = new HashMap<>();
+		objects = new HashMap<>();
 	}
 
 }

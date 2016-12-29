@@ -30,8 +30,14 @@ public class Boerse extends LocalService {
 	 */
 	public Boerse(String uID) {
 		super(uID);
-		// TODO - implement Boerse.Boerse
-		throw new UnsupportedOperationException();
+		this.versteigerung = new ArrayList<Versteigerung>();
+	}
+
+	/**
+	 * get all currently available auctions
+	 */
+	public Collection<Versteigerung> getAuctions() {
+		return versteigerung;
 	}
 
 }

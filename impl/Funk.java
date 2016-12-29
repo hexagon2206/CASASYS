@@ -2,12 +2,13 @@ import java.util.*;
 
 public class Funk extends LocalService {
 
-	protected Collection<Trucker> registerd;
+	protected Collection<Trucker> registered;
 
 	/**
-	 * 
+	 * sends a message m to a Trucker to, if he is available for this funk.
 	 * @param m
 	 * @param to
+	 * @return true, if the message could be delivered; false if not.
 	 */
 	public boolean send(Message m, Trucker to) {
 		// TODO - implement Funk.send
@@ -15,12 +16,15 @@ public class Funk extends LocalService {
 	}
 
 	/**
-	 * returnes the number of reciving truckers
-	 * @param m
+	 * returns the number of receiving truckers
+	 * @param m : message to be sent to all truckers
 	 */
 	public int broadCast(Message m) {
-		// TODO - implement Funk.broadCast
-		throw new UnsupportedOperationException();
+		int count = 0;
+		for(Trucker to : registered) {
+			if(send(m, to)) count++;
+		}
+		return count;
 	}
 
 	/**
@@ -28,8 +32,7 @@ public class Funk extends LocalService {
 	 * @param participant
 	 */
 	public void register(Trucker participant) {
-		// TODO - implement Funk.register
-		throw new UnsupportedOperationException();
+		if(participant != null) registered.add(participant);
 	}
 
 	/**
@@ -37,8 +40,7 @@ public class Funk extends LocalService {
 	 * @param participant
 	 */
 	public boolean unregister(Trucker participant) {
-		// TODO - implement Funk.unregister
-		throw new UnsupportedOperationException();
+		return registered.remove(participant);
 	}
 
 	/**
@@ -47,8 +49,6 @@ public class Funk extends LocalService {
 	 */
 	public Funk(String uID) {
 		super(uID);
-		// TODO - implement Funk.Funk
-		throw new UnsupportedOperationException();
 	}
 
 }
