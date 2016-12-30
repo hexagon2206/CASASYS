@@ -9,8 +9,7 @@ public class SchwarzesBrett extends LocalService {
 	 * @param m
 	 */
 	public void pin(Message m) {
-		// TODO - implement SchwarzesBrett.pin
-		throw new UnsupportedOperationException();
+		-
 	}
 
 	/**
@@ -19,8 +18,7 @@ public class SchwarzesBrett extends LocalService {
 	 */
 	public SchwarzesBrett(String uID) {
 		super(uID);
-		// TODO - implement SchwarzesBrett.SchwarzesBrett
-		throw new UnsupportedOperationException();
+		this.messages = new ArrayList<messages>();
 	}
 
 }

@@ -2,15 +2,15 @@ import java.util.*;
 
 public class Boerse extends LocalService {
 
-	public Collection<Versteigerung> versteigerung;
+	public Map<Auftrag, Versteigerung> versteigerung;
 
 	/**
 	 * 
 	 * @param auftrag
 	 */
 	public void auction(Auftrag auftrag) {
-		// TODO - implement Boerse.auction
-		throw new UnsupportedOperationException();
+		if(auftrag == null) return;
+		versteigerung.put(auftrag, new Versteigerung(MObjectRepo.getNewUID(), auftrag));
 	}
 
 	/**
@@ -20,8 +20,7 @@ public class Boerse extends LocalService {
 	 * @param bid
 	 */
 	public boolean bid(Auftrag auftrag, Trucker kaeufer, int bid) {
-		// TODO - implement Boerse.bid
-		throw new UnsupportedOperationException();
+		versteigerung.get(auftrag).bid(kaeufer, bid);
 	}
 
 	/**
@@ -30,14 +29,14 @@ public class Boerse extends LocalService {
 	 */
 	public Boerse(String uID) {
 		super(uID);
-		this.versteigerung = new ArrayList<Versteigerung>();
+		this.versteigerung = new HashMap<Auftrag, Versteigerung>();
 	}
 
 	/**
 	 * get all currently available auctions
 	 */
 	public Collection<Versteigerung> getAuctions() {
-		return versteigerung;
+		return versteigerung.values();
 	}
 
 }

@@ -27,5 +27,4 @@ public class Versteigerung extends MObject {
 		// TODO - implement Versteigerung.Versteigerung
 		throw new UnsupportedOperationException();
 	}
-
 }
