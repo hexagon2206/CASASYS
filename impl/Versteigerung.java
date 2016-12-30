@@ -8,6 +8,7 @@ public class Versteigerung extends MObject {
 	private int currentBid;
 
     //TODO: was für ein auktionsverfahren? startwert 0 und das höchste gebot gewinnt?
+    //TODO: wann laufen Auktionen aus?
 
 	/**
 	 * place a bid for this auction

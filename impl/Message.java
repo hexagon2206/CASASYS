@@ -7,13 +7,14 @@ public class Message extends MObject {
 	Collection<Knowledge> contains;
 
 	/**
-	 * 
+	 * creates a message with given information
 	 * @param uID
+	 * @param knowledge : Collection of all information, the message shall contain
 	 */
-	public Message(String uID) {
+	public Message(String uID, Collection<Knowledge> knowledge) {
 		super(uID);
-		// TODO - implement Message.Message
-		throw new UnsupportedOperationException();
+		this.contains = knowledge;
+		this.createdAt = TimeStamp.now();
 	}
 
 }
