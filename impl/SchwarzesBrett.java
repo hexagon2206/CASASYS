@@ -22,7 +22,7 @@ public class SchwarzesBrett extends LocalService {
 	 */
 	public SchwarzesBrett(String uID) {
 		super(uID);
-		this.messages = new LinkedList<messages>();
+		this.messages = new LinkedList<Message>();
 	}
 
 }

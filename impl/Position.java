@@ -8,7 +8,7 @@ public class Position {
 	 */
 	public Double done;
 
-	new Position(Strasse at) {
+	public Position(Strasse at) {
 		this.at = at;
 		this.done = 0.0;
 	}

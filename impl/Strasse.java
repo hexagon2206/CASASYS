@@ -12,5 +12,9 @@ public class Strasse {
 		this.ziel = target;
 		this.kosten = kosten;
 	}
+	
+	public int getKosten() {
+		return kosten;
+	}
 
 }
