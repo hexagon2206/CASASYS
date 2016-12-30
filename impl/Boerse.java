@@ -5,7 +5,7 @@ public class Boerse extends LocalService {
 	public Map<Auftrag, Versteigerung> versteigerung;
 
 	/**
-	 * 
+	 * put a job for auction
 	 * @param auftrag
 	 */
 	public void auction(Auftrag auftrag) {
@@ -14,13 +14,16 @@ public class Boerse extends LocalService {
 	}
 
 	/**
-	 * 
-	 * @param auftrag
-	 * @param kaeufer
-	 * @param bid
+	 * place a bid for a job
+	 * @param auftrag : job to bid on
+	 * @param kaeufer : bidding trucker
+	 * @param bid : amount to bid with
+	 * @return : true, if bid was accepted
 	 */
 	public boolean bid(Auftrag auftrag, Trucker kaeufer, int bid) {
-		versteigerung.get(auftrag).bid(kaeufer, bid);
+		Versteigerung auction = versteigerung.get(auftrag);
+		if(auction == null) return false;
+		return auction.bid(kaeufer, bid);
 	}
 
 	/**

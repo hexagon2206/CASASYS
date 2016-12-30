@@ -7,8 +7,10 @@ public class Versteigerung extends MObject {
 	public Trucker bidder;
 	private int currentBid;
 
+    //TODO: was für ein auktionsverfahren? startwert 0 und das höchste gebot gewinnt?
+
 	/**
-	 * 
+	 * place a bid for this auction
 	 * @param kaeufer
 	 * @param bid
 	 */
@@ -18,13 +20,17 @@ public class Versteigerung extends MObject {
 	}
 
 	/**
-	 * 
+	 * create a new Versteigerung for auftrag
 	 * @param uID
 	 * @param auftrag
 	 */
 	public Versteigerung(String uID, Auftrag auftrag) {
 		super(uID);
-		// TODO - implement Versteigerung.Versteigerung
-		throw new UnsupportedOperationException();
+		this.auftrag = auftrag;
+		//TODO: start value
+	}
+
+	public int currentBid() {
+		return currentBid;
 	}
 }
