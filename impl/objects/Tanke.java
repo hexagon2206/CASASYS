@@ -1,3 +1,4 @@
+package objects;
 public class Tanke extends LocalService {
 
 	private int preis;

@@ -1,3 +1,4 @@
+package objects;
 /**
  * Ladung kann nur in einer Ladebucht ODER auf einem Truck sein.
  */

@@ -1,3 +1,4 @@
+package objects;
 import java.util.*;
 
 public class Message extends MObject {

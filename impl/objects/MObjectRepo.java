@@ -1,4 +1,6 @@
+package objects;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class MObjectRepo {
 
@@ -6,7 +8,7 @@ public class MObjectRepo {
 
 	private static MObjectRepo r;
 	
-	{
+	static {
 		r=new MObjectRepo();
 	}
 	
@@ -32,6 +34,10 @@ public class MObjectRepo {
 
 	private MObjectRepo() {
 		objects = new HashMap<>();
+	}
+
+	public static Stream<MObject> getStream() {
+		return r.objects.values().stream();
 	}
 
 }

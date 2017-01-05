@@ -1,3 +1,4 @@
+package objects;
 public class Strasse {
 
 	protected Ort ziel;

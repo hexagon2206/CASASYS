@@ -1,0 +1,4 @@
+ort(a).
+ort(b).
+ort(c).
+strasse(a,b,10).

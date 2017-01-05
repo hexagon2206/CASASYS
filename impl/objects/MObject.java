@@ -1,3 +1,4 @@
+package objects;
 /**
  * An base Class for all Objects which should be loadable and savable
  */
